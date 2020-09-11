@@ -40,9 +40,7 @@ namespace TextAdventure
             
         }
 
-
-        
-
+ 
         public static void LetsFight()
         {
             int villanDamage;
@@ -62,17 +60,17 @@ namespace TextAdventure
                 villanDamage = Attack(AttackDie());
                 Console.WriteLine($"Attack Power: {villanDamage}");
                 villan.HitPoints -= villanDamage;
-                Console.WriteLine($"Curret Villan HP: {villan.HitPoints}");
+                Console.WriteLine($"Current  Villan HP: {villan.HitPoints}");
                 Console.ResetColor();
 
                 Console.WriteLine();
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"{villan.Name} Attacks roll the die");
-                heroDamage = Attack(AttackDie());
+                heroDamage = Attack(AttackDie()); 
                 Console.WriteLine($"Attack Power: {villanDamage}");
                 hero.HitPoints -= heroDamage;
-                Console.WriteLine($"Curret Hero HP: {hero.HitPoints}");
+                Console.WriteLine($"Current  Hero HP: {hero.HitPoints}");
                 Console.ResetColor();
 
                 Console.ReadLine();
