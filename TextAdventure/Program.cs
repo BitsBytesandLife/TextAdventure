@@ -2,11 +2,17 @@
 
 namespace TextAdventure
 {
+    
     class Program
     {
+        private static taAppUI taUI;
         static void Main(string[] args)
         {
-            DisplayMenu();
+            Combat.LetsFight();
+
+            //taUI = new taAppUI();
+            //DisplayMenu();
+            //RunMenuOptions();
             //Console.WriteLine("Hello World!");
         }
 
@@ -18,7 +24,7 @@ namespace TextAdventure
             Console.WriteLine("Text Adventure");
             Console.WriteLine("1  Create Player");
             Console.WriteLine("2  Start Playing");
-            Console.WriteLine("3  Comabt Test");
+            Console.WriteLine("3  Combat Test");
             Console.WriteLine("4  Exit");
         }
 
@@ -48,9 +54,8 @@ namespace TextAdventure
 
         public static void RunMenuOptions()
         {
-            string menuItem = taAppUI.ValidateChoices("Select a type in a number from 1 - 14 \n" +
-                                                      "to choose your menu item", new string[] { "1", "2", "3", "4", "5", "6",
-                                                      "7", "8", "9", "10", "11", "12","13","14","15","16"});
+            string menuItem = taAppUI.ValidateChoices("Select a type in a number from 1 - 4 \n" +
+                                                      "to choose your menu item", new string[] { "1", "2", "3", "4"});
 
 
             switch (menuItem)
@@ -67,9 +72,10 @@ namespace TextAdventure
                     break;
                 case "3":
                     MenuHeader("Combat Test");
-                    ContinueApp();
+                    Combat.LetsFight();
+                    //ContinueApp();
                     break;
-                case "16":
+                case "4":
                     MenuHeader("Exit Application");
                     return;
 
